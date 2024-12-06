@@ -1,0 +1,28 @@
+{
+  "name": "create-laju-app",
+  "version": "1.0.7",
+  "keywords": [
+    "laju",
+    "svelte",
+    "tailwindcss",
+    "hyper-express",
+    "sqlite",
+    "boilerplate",
+    "template",
+    "generator"
+  ],
+  "bin": {
+    "create-laju-app": "./bin/cli.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "commander": "^11.0.0",
+    "degit": "^2.8.4",
+    "prompts": "^2.4.2"
+  },
+  "homepage": "https://laju.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maulanashalihin/laju.git"
+  }
+}
