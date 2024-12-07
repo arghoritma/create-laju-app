@@ -74,11 +74,11 @@ program
       
       console.log('');
       console.log('👉 Next steps:');
-      console.log('📁 cd ' + targetPath);
+      console.log('📁 cd ' + projectDirectory);
       console.log('🔥 npm run dev to start the development server.');
       console.log('📦 npm run build to build the production files.');
       console.log('');
-      console.log('� Build Faster with Laju - Happy Coding!');
+    
       
       
       
