@@ -73,19 +73,11 @@ program
       console.log('🚀 Your project is ready! You can now start developing.');
       
       console.log('');
-      console.log('🔴 Redis Server Setup:');
-      console.log('1. Download Redis:');
-      console.log('   Windows: https://github.com/microsoftarchive/redis/releases');
-      console.log('   Mac: brew install redis');
-      console.log('   Linux: sudo apt-get install redis-server');
-      console.log('');
-      console.log('2. Start Redis Server:');
-      console.log('   Windows: redis-server');
-      console.log('   Mac/Linux: sudo service redis-server start');
-      console.log('');
+      console.log('👉 Next steps:');
       console.log('📁 cd ' + targetPath);
       console.log('🔥 npm run dev to start the development server.');
       console.log('📦 npm run build to build the production files.');
+      console.log('');
       console.log('� Build Faster with Laju - Happy Coding!');
       
       
