@@ -68,15 +68,29 @@ program
       execSync(process.platform === 'win32' ? 'copy .env.example .env' : 'cp .env.example .env', { stdio: 'inherit' });
       console.log('🔄 Running migrations...');
       execSync('npx knex migrate:latest', { stdio: 'inherit' });
+      // Update scripts in package.json for Windows
+            if (process.platform === 'win32') {
+              packageJson.scripts = {
+                "dev": "cls && npx concurrently \"vite\" \"npx nodemon\"",
+                "build": "if exist build rmdir /s /q build && vite build && tsc && xcopy /s /e /i dist build && xcopy /s /e /i public build"
+              };
+              
+              // Write updated package.json
+              fs.writeFileSync(
+                packageJsonPath,
+                JSON.stringify(packageJson, null, 2)
+              );
+            }
+      
       console.log('🎉 Project created successfully!');
       console.log('');
       console.log('🚀 Your project is ready! You can now start developing.');
       
       console.log('');
       console.log('👉 Next steps:');
-      console.log('📁 cd ' + projectDirectory);
-      console.log('🔥 npm run dev to start the development server.');
-      console.log('📦 npm run build to build the production files.');
+      console.log('1. 📁 cd ' + projectDirectory);
+      console.log('2. 🔥 npm run dev to start the development server.');
+      console.log('3. 📦 npm run build to build the production files.');
       console.log('');
     
       
