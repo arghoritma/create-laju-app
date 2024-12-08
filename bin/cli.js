@@ -7,6 +7,23 @@ const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+const ASCII_ART = `                      -       
+           :+===+   =+        
+       ++++++++++++++         
+    =++++=      =+++          
+   +++=        +++=           
+  ++=        +++++            
+ ++        ++++++         +   
+ ==      =++++++++++++    -=  
+ =     =++++++++++++      ++  
+ =          ++++++        ++  
+  -        =++++       =+=   
+          =++++        +++    
+         =++=       -+++=     
+        ++++++++++++++=       
+       ++=+++++++++=          
+      ==     `;
+
 program
   .name('create-laju-app')
   .description('CLI to create a new project from template')
@@ -16,6 +33,8 @@ program
   .argument('[project-directory]', 'Project directory name')
   .action(async (projectDirectory) => {
     try {
+      console.log(ASCII_ART); // Tambahkan ini
+      console.log('\n'); // Tambah baris kosong setelah ASCII art
       // If no project name, ask user
       if (!projectDirectory) {
         const response = await prompts({
@@ -89,13 +108,10 @@ program
       console.log('');
       console.log('👉 Next steps:');
       console.log('1. 📁 cd ' + projectDirectory);
-      console.log('2. 🔥 npm run dev to start the development server.');
-      console.log('3. 📦 npm run build to build the production files.');
+      console.log('2. 🔥 npm run dev => to start the development server.');
+      console.log('3. 📦 npm run build => to build the production files.');
       console.log('');
-    
-      
-      
-      
+ 
     } catch (error) {
       console.error('Error:', error.message);
       process.exit(1);
