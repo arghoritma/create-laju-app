@@ -1,6 +1,7 @@
 {
   "name": "create-laju-app",
   "version": "1.0.14",
+  "description": "CLI tool to scaffold new Laju framework projects",
   "keywords": [
     "laju",
     "svelte",
@@ -9,20 +10,33 @@
     "sqlite",
     "boilerplate",
     "template",
-    "generator"
+    "generator",
+    "cli"
   ],
-  "bin": {
-    "create-laju-app": "./bin/cli.js"
-  },
-  "dependencies": {
-    "child_process": "^1.0.2",
-    "commander": "^11.0.0",
-    "degit": "^2.8.4",
-    "prompts": "^2.4.2"
-  },
+  "author": "Maulana Shalihin <maulana@drip.id>",
+  "license": "MIT",
   "homepage": "https://laju.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maulanashalihin/laju.git"
+    "url": "git+https://github.com/arghoritma/create-laju-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maulanashalihin/laju/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "create-laju-app": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "commander": "^11.0.0",
+    "degit": "^2.8.4",
+    "prompts": "^2.4.2"
   }
 }
