@@ -165,6 +165,20 @@ program
       console.log('\x1b[90m  Creating project at \x1b[36m' + targetPath + '\x1b[0m');
       console.log('');
 
+      // Check if Git is installed
+      try {
+        execSync('git --version', { stdio: 'ignore' });
+      } catch (e) {
+        console.log('\x1b[1;31m✖\x1b[0m \x1b[1;91mError:\x1b[0m Git is not installed or not in PATH.');
+        console.log('');
+        console.log('\x1b[90m  Please install Git to continue:\x1b[0m');
+        console.log('  - Windows: https://git-scm.com/download/win');
+        console.log('  - macOS: brew install git');
+        console.log('  - Linux: sudo apt install git (Ubuntu/Debian)');
+        console.log('');
+        process.exit(1);
+      }
+
       // Clone template from GitHub
       const emitter = degit('maulanashalihin/laju');
 
