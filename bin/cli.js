@@ -180,8 +180,12 @@ program
       // Update scripts for Windows before writing package.json
       if (process.platform === 'win32') {
         packageJson.scripts = {
-          "dev": "cls && npx concurrently \"vite\" \"npx nodemon\"",
-          "build": "if exist build rmdir /s /q build && vite build && tsc && xcopy /s /e /i dist build && xcopy /s /e /i public build"
+          "dev": "cls && if exist dist rmdir /s /q dist && if exist build rmdir /s /q build && npx concurrently \"vite\" \"timeout /t 1 >nul && npx nodemon --config nodemon.json\"",
+          "build": "if exist build rmdir /s /q build && vite build && tsc && tsc-alias -p tsconfig.json && if not exist dist\\views mkdir dist\\views && xcopy /s /e /i resources\\views dist\\views",
+          "refresh": "if exist data rmdir /s /q data && npx knex migrate:latest",
+          "test:ui": "npx vitest --ui",
+          "test:run": "npx vitest run",
+          "test:coverage": "npx vitest run --coverage"
         };
       }
 
