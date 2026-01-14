@@ -59,35 +59,35 @@ Visit `http://localhost:5555`
 
 ## 📚 Documentation
 
-**[Complete Documentation →](docs/README.md)**
+**[Complete Documentation →](https://github.com/maulanashalihin/laju/tree/main/docs)**
 
 Documentation is organized for progressive learning from beginner to advanced.
 
 ### Getting Started
-- [Introduction](docs/01-INTRODUCTION.md) - Framework overview, quick start
-- [Project Structure](docs/02-PROJECT-STRUCTURE.md) - Directory layout
-- [Database](docs/03-DATABASE.md) - Knex.js + SQLite
+- [Introduction](https://github.com/maulanashalihin/laju/blob/main/docs/01-INTRODUCTION.md) - Framework overview, quick start
+- [Project Structure](https://github.com/maulanashalihin/laju/blob/main/docs/02-PROJECT-STRUCTURE.md) - Directory layout
+- [Database](https://github.com/maulanashalihin/laju/blob/main/docs/03-DATABASE.md) - Knex.js + SQLite
 
 ### Core Features
-- [Routing & Controllers](docs/04-ROUTING-CONTROLLERS.md) - Handle requests
-- [Frontend (Svelte 5)](docs/05-FRONTEND-SVELTE.md) - Build reactive UI
-- [Authentication](docs/06-AUTHENTICATION.md) - Sessions + OAuth
-- [Middleware](docs/07-MIDDLEWARE.md) - Auth, rate limiting
-- [Validation](docs/08-VALIDATION.md) - Input validation
-- [Email](docs/09-EMAIL.md) - Send emails
+- [Routing & Controllers](https://github.com/maulanashalihin/laju/blob/main/docs/04-ROUTING-CONTROLLERS.md) - Handle requests
+- [Frontend (Svelte 5)](https://github.com/maulanashalihin/laju/blob/main/docs/05-FRONTEND-SVELTE.md) - Build reactive UI
+- [Authentication](https://github.com/maulanashalihin/laju/blob/main/docs/06-AUTHENTICATION.md) - Sessions + OAuth
+- [Middleware](https://github.com/maulanashalihin/laju/blob/main/docs/07-MIDDLEWARE.md) - Auth, rate limiting
+- [Validation](https://github.com/maulanashalihin/laju/blob/main/docs/08-VALIDATION.md) - Input validation
+- [Email](https://github.com/maulanashalihin/laju/blob/main/docs/09-EMAIL.md) - Send emails
 
 ### Advanced Features
-- [Storage (S3)](docs/10-STORAGE.md) - File uploads
-- [Caching](docs/11-CACHING.md) - Redis + Database cache
-- [Background Jobs](docs/12-BACKGROUND-JOBS.md) - Cron jobs, Scheduling
-- [CSRF Protection](docs/13-CSRF.md) - Security
-- [Translation](docs/14-TRANSLATION.md) - Multi-language
+- [Storage (S3)](https://github.com/maulanashalihin/laju/blob/main/docs/10-STORAGE.md) - File uploads
+- [Caching](https://github.com/maulanashalihin/laju/blob/main/docs/11-CACHING.md) - Redis + Database cache
+- [Background Jobs](https://github.com/maulanashalihin/laju/blob/main/docs/12-BACKGROUND-JOBS.md) - Cron jobs, Scheduling
+- [CSRF Protection](https://github.com/maulanashalihin/laju/blob/main/docs/13-CSRF.md) - Security
+- [Translation](https://github.com/maulanashalihin/laju/blob/main/docs/14-TRANSLATION.md) - Multi-language
 
 ### Production
-- [Best Practices](docs/16-BEST-PRACTICES.md) - Code quality
-- [Security Guide](docs/17-SECURITY.md) - Secure your app
-- [Testing](docs/19-TESTING.md) - Unit + Integration tests
-- [Deployment](docs/20-DEPLOYMENT.md) - Production setup
+- [Best Practices](https://github.com/maulanashalihin/laju/blob/main/docs/16-BEST-PRACTICES.md) - Code quality
+- [Security Guide](https://github.com/maulanashalihin/laju/blob/main/docs/17-SECURITY.md) - Secure your app
+- [Testing](https://github.com/maulanashalihin/laju/blob/main/docs/19-TESTING.md) - Unit + Integration tests
+- [Deployment](https://github.com/maulanashalihin/laju/blob/main/docs/20-DEPLOYMENT.md) - Production setup
 
 ## Project Structure
 
