@@ -191,18 +191,6 @@ program
       // Update project name in package.json
       packageJson.name = projectDirectory;
 
-      // Update scripts for Windows before writing package.json
-      if (process.platform === 'win32') {
-        packageJson.scripts = {
-          "dev": "cls && if exist dist rmdir /s /q dist && if exist build rmdir /s /q build && npx concurrently \"vite\" \"nodemon --config nodemon.json\"",
-          "build": "vite build && tsc && tsc-alias -p tsconfig.json && if not exist dist\\views mkdir dist\\views && xcopy /s /e /i resources\\views dist\\views",
-          "refresh": "if exist data rmdir /s /q data && npx knex migrate:latest",
-          "test:ui": "npx vitest --ui",
-          "test:run": "npx vitest run",
-          "test:coverage": "npx vitest run --coverage"
-        };
-      }
-
       // Write back package.json
       fs.writeFileSync(
         packageJsonPath,
@@ -226,7 +214,7 @@ program
         console.log('');
 
         console.log('\x1b[36m  Preparing database...\x1b[0m');
-        execSync('npx knex migrate:latest', { stdio: 'inherit', timeout: 60000 });
+        execSync('npm run refresh 1', { stdio: 'inherit', timeout: 60000 });
         console.log('\x1b[32m  ✓ Database ready\x1b[0m');
       } finally {
         process.chdir(originalDir);
