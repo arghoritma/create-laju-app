@@ -191,6 +191,9 @@ program
       // Update project name in package.json
       packageJson.name = projectDirectory;
 
+      // Reset version to 0.0.1 for new project
+      packageJson.version = '0.0.1';
+
       // Write back package.json
       fs.writeFileSync(
         packageJsonPath,
