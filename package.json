@@ -1,6 +1,6 @@
 {
   "name": "create-laju-app",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "CLI tool to scaffold new Laju framework projects",
   "keywords": [
     "laju",
@@ -34,6 +34,10 @@
     "README.md",
     "LICENSE"
   ],
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "commander": "^11.0.0",
     "degit": "^2.8.4",
