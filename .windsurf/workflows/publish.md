@@ -18,9 +18,15 @@ description: Publish package to npm registry
    ```
 
 3. **Login to npm (if not already logged in)**
-   ```bash
-   npm login
-   ```
+   - Check if already logged in:
+     ```bash
+     npm whoami
+     ```
+   - If it shows your username, skip this step
+   - If not, login:
+     ```bash
+     npm login
+     ```
    - Enter your npm username
    - Enter your npm password
    - Enter your npm email
