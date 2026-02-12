@@ -106,9 +106,27 @@ program
   .description('CLI to create a new project from template')
   .version('1.0.0');
 
+async function selectTailwindVersion() {
+  console.log('');
+  console.log('\x1b[36m  Which TailwindCSS version would you like to use?\x1b[0m');
+
+  const response = await prompts({
+    type: 'select',
+    name: 'tailwindVersion',
+    message: '',
+    choices: [
+      { title: 'TailwindCSS 4 (latest ✓)', value: 'v4' },
+      { title: 'TailwindCSS 3 (stable)', value: 'v3' }
+    ]
+  });
+
+  return response.tailwindVersion || 'v4';
+}
+
 program
   .argument('[project-directory]', 'Project directory name')
   .option('--package-manager <pm>', 'Package manager to use (npm, yarn, bun)')
+  .option('--tailwind <version>', 'TailwindCSS version to use (v3, v4)')
   .action(async (projectDirectory, options) => {
     try {
       console.log('');
@@ -128,6 +146,20 @@ program
         packageManager = await selectPackageManager(availablePackageManagers);
       }
       console.log('\x1b[36m  Using ' + packageManager + '\x1b[0m');
+      console.log('');
+
+      // Select TailwindCSS version (default to v4 if not specified)
+      let tailwindVersion;
+      if (options.tailwind) {
+        tailwindVersion = options.tailwind;
+        if (!['v3', 'v4'].includes(tailwindVersion)) {
+          console.log('\x1b[1;31m✖\x1b[0m \x1b[1;91mError:\x1b[0m Invalid TailwindCSS version. Use v3 or v4.');
+          process.exit(1);
+        }
+      } else {
+        tailwindVersion = await selectTailwindVersion();
+      }
+      console.log('\x1b[36m  Using TailwindCSS ' + tailwindVersion + '\x1b[0m');
       console.log('');
 
       // If no project name, ask user
@@ -219,6 +251,14 @@ program
         console.log('\x1b[36m  Preparing database...\x1b[0m');
         execSync('npm run refresh 1', { stdio: 'inherit', timeout: 60000 });
         console.log('\x1b[32m  ✓ Database ready\x1b[0m');
+
+        // Migrate to TailwindCSS v4 if selected
+        if (tailwindVersion === 'v4') {
+          console.log('');
+          console.log('\x1b[36m  Migrating to TailwindCSS v4...\x1b[0m');
+          execSync('npm run tailwind:migrate to-v4', { stdio: 'inherit', timeout: 60000 });
+          console.log('\x1b[32m  ✓ TailwindCSS v4 ready\x1b[0m');
+        }
       } finally {
         process.chdir(originalDir);
       }

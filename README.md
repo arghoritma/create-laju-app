@@ -24,6 +24,7 @@ npx create-laju-app <project-name> [options]
 | Option | Description | Default |
 |--------|-------------|---------|
 | `--package-manager` | Package manager to use (npm, yarn, bun) | Auto-detect |
+| `--tailwind` | TailwindCSS version to use (v3, v4) | Prompt (defaults to v4) |
 
 ## What's Included
 
@@ -32,7 +33,7 @@ The created project includes:
 - **Laju Framework** - High-performance TypeScript web framework
 - **Svelte 5** - Reactive UI with runes
 - **Inertia.js** - SPA without client-side routing
-- **TailwindCSS 4** - Utility-first CSS with Vite
+- **TailwindCSS** - Utility-first CSS with Vite (v4 or v3)
 - **Database** - SQLite + Knex.js migrations
 - **Authentication** - Session-based auth + OAuth (Google)
 - **Storage** - S3/Wasabi support with presigned URLs

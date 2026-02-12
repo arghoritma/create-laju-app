@@ -1,6 +1,6 @@
 {
   "name": "create-laju-app",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "CLI tool to scaffold new Laju framework projects",
   "keywords": [
     "laju",
